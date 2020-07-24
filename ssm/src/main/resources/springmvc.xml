@@ -33,5 +33,7 @@
             <bean id="myInterceptor" class="cn.itcast.interceptor.MyInterceptor"/>
         </mvc:interceptor>
     </mvc:interceptors>
+    <!--配置异常处理器-->
+    <bean id="myException" class="cn.itcast.exception.MyExceptionResolver"/>
 
 </beans>
