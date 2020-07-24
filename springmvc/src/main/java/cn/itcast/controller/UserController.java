@@ -1,5 +1,6 @@
 package cn.itcast.controller;
 
+import cn.itcast.exception.MyException;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
@@ -36,5 +37,14 @@ public class UserController {
         upload.transferTo(new File(realPath,filename));
         return "success";
 
+    }
+    @RequestMapping("testException")
+    public String testException(){
+        System.out.println("进入异常处理controller。。。。。");
+        if (true){
+            throw new MyException("测试exception");
+        }
+
+        return "success";
     }
 }
